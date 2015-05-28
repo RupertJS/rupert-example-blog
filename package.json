@@ -2,8 +2,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js",
-    "test": "./node_modules/.bin/grunt",
-    "features": "./node_modules/.bin/grunt features",
+    "test": "grunt",
+    "features": "grunt features",
     "watch": "grunt watcher"
   },
   "dependencies": {
@@ -13,5 +13,22 @@
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "rupert-grunt": "^0.1.1"
-  }
+  },
+  "name": "rupert-example-blog",
+  "description": "A sample Rupert blog (straight-up MEAN stack).",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RupertJS/rupert-example-blog.git"
+  },
+  "keywords": [
+    "Rupert",
+    "RupertJS"
+  ],
+  "author": "David Souther <davidsouther@gmail.com> (https://davidsouther.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RupertJS/rupert-example-blog/issues"
+  },
+  "homepage": "https://github.com/RupertJS/rupert-example-blog"
 }
