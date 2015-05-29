@@ -3,7 +3,7 @@
     "root": "./src/client",
     "scripts": {
       "types": [
-        "main"
+        "component"
       ]
     },
     "vendors": {
