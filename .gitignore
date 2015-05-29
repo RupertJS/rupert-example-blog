@@ -17,3 +17,6 @@ www/
 # Cordova prepared files
 plugins/
 platform/
+npm-debug.log
+env/
+run/

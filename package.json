@@ -1,8 +1,9 @@
 {
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js",
-    "test": "grunt",
+    "start": "./deploy/node/start.sh",
+    "stop": "./deploy/node/stop.sh",
+    "test": "./node_modules/.bin/grunt",
     "features": "grunt features",
     "watch": "grunt watcher"
   },
