@@ -1,0 +1,9 @@
+<ul class="list-unstyled">
+  <li ng-repeat="post in state.posts">
+    <h2><a ui-sref="posts.view({postId: post.id})" href="#">{{post.title}}</a></h2>
+    <p>{{post.snippet}}</p>
+  </li>
+  <li ng-if="state.posts.length == 0">
+    <p>There are no posts, yet!</p>
+  </li>
+</ul>

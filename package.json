@@ -3,14 +3,15 @@
   "scripts": {
     "start": "./deploy/node/start.sh",
     "stop": "./deploy/node/stop.sh",
+    "restart": "npm stop; npm start",
     "test": "./node_modules/.bin/grunt",
     "features": "grunt features",
     "watch": "grunt watcher"
   },
   "dependencies": {
     "nodemon": "^1.3.7",
-    "rupert": "^0.3.1",
-    "rupert-plugin-angular": "^0.1.3",
+    "rupert": "^0.3.4",
+    "rupert-plugin-angular": "^0.1.4",
     "rupert-plugin-bootstrap": "^0.1.1",
     "rupert-plugin-mongo": "0.0.2"
   },

@@ -11,17 +11,11 @@
   <link rel="stylesheet" href="/print.css" media="print"/>
 </head>
 <body>
-
   <blog-navigation></blog-navigation>
 
-  <div class="container">
-    <div ui-view="main"></div>
-  </div>
+  <div class="container" ui-view></div>
 
   <script src="/vendors.js"></script>
-
-  <!-- Uncomment below to load real-time sockets.-->
-  <!-- script(src="/socket.io/socket.io.js")-->
   <script src="/templates.js"></script>
   <script src="/application.js"></script>
 </body>

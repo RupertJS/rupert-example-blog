@@ -3,13 +3,16 @@
     "root": "./src/client",
     "scripts": {
       "types": [
-        "component"
+        "injector", "component"
       ]
     },
     "vendors": {
       "prefix": [],
       "js": [],
       "css": []
+    },
+    "angular": {
+      "uiRouter": true
     }
   },
   "tls": false,
