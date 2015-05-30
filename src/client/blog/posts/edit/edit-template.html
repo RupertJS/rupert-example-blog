@@ -1,0 +1,15 @@
+<form name="postEdit">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input ng-model="state.post.title" class="form-control" id="title" placeholder="Post Title">
+  </div>
+  <div class="form-group">
+    <label for="snippet">Snippet</label>
+    <input ng-model="state.post.snippet" class="form-control" id="snippet" placeholder="Post Snippet">
+  </div>
+  <div class="form-group">
+    <label for="content">Post</label>
+    <textarea ng-model="state.post.content" class="form-control" id="content" placeholder="Write your post" rows="8"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default" ng-click="state.save()">Submit</button>
+</form>
