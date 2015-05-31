@@ -1,10 +1,11 @@
 angular.module('blog', [
-  'ui.router',
+  'ngRoute',
   'blog.navigation',
   'blog.posts'
-]).config(function($urlRouterProvider){
-  $urlRouterProvider
-    .when('', '/posts/list')
-    .when('/', '/posts/list')
+]).config(function($routeProvider){
+  $routeProvider
+    .otherwise({
+      redirectTo: '/posts/list'
+    })
     ;
 });

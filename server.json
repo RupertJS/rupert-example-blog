@@ -12,7 +12,6 @@
       "css": []
     },
     "angular": {
-      "uiRouter": true
     }
   },
   "tls": false,

@@ -6,25 +6,18 @@ function BlogPostsListComponent(){
   };
 }
 
-blogPostsListPage.$inject = ['$stateProvider'];
-function blogPostsListPage($stateProvider){
-  $stateProvider.state({
-    name: 'posts.list',
-    url: '/list',
+blogPostsListPage.$inject = ['$routeProvider'];
+function blogPostsListPage($routeProvider){
+  $routeProvider.when('/posts/list', {
     template: '<blog-posts-list posts="posts" />',
-    resolve: {
-      posts: ['Posts', function (Posts){
-        return Posts.query().$promise;
-      }]
-    },
-    controller: ['$scope', 'posts', function($, p){
-      $.posts = p;
+    controller: ['$scope', 'Posts', function($, Posts){
+      $.posts = Posts.query();
     }]
   });
 }
 
 angular.module('blog.posts.list', [
-  'ui.router',
+  'ngRoute',
   'blog.posts.service',
   'blog.posts.list.template'
 ])

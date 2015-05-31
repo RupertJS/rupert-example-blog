@@ -37,8 +37,8 @@ angular.module = function(moduleName, dependencies){
 
   module.page = module.page || function(stateName, config){
     config.controllerAs = 'state';
-    module.config(function($stateProvider){
-      $stateProvider.state(stateName, config);
+    module.config(function($routeProvider){
+      $routeProvider.state(stateName, config);
     });
   };
 

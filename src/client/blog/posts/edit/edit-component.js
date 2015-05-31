@@ -14,49 +14,27 @@ function BlogPostsEditComponent(){
   };
 }
 
-blogPostsNewPage.$inject = ['$stateProvider'];
-function blogPostsNewPage($stateProvider){
-  $stateProvider.state({
-    name: 'posts.new',
-    url: '/new',
+blogPostsEditPage.$inject = ['$routeProvider'];
+function blogPostsEditPage($routeProvider){
+  var blogPostsEditConfig = {
     template: '<blog-posts-edit post="post" />',
-    resolve: {
-      post: ['Posts', function (Posts){
-        return new Posts();
-      }]
-    },
-    controller: ['$scope', 'post', function($, p){
-      $.post = p;
+    controller: ['$scope', 'Posts', '$routeParams', function($, Posts, $r){
+      if($r.postId){
+        $.post = Posts.get({postId: $r.postId});
+      } else {
+        $.post = new Posts();
+      }
     }]
-  });
-}
-
-blogPostsEditPage.$inject = ['$stateProvider'];
-function blogPostsEditPage($stateProvider){
-  $stateProvider.state({
-    name: 'posts.edit',
-    url: '/edit/:postId',
-    template: '<blog-posts-edit post="post" />',
-    resolve: {
-      postId: ['$stateParams', function($stateParams){
-        return $stateParams.postId;
-      }],
-      post: ['Posts', function (Posts, postId){
-        return Posts.get({postId: postId}).$promise;
-      }]
-    },
-    controller: ['$scope', 'post', function($, p){
-      $.post = p;
-    }]
-  });
+  };
+  $routeProvider.when('/posts/edit/:postId', blogPostsEditConfig);
+  $routeProvider.when('/posts/new', blogPostsEditConfig);
 }
 
 angular.module('blog.posts.edit', [
-  'ui.router',
+  'ngRoute',
   'blog.posts.service',
   'blog.posts.edit.template'
 ])
 .component(BlogPostsEditComponent)
 .config(blogPostsEditPage)
-.config(blogPostsNewPage)
 ;
