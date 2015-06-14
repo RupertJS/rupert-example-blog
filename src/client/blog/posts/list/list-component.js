@@ -1,18 +1,17 @@
-BlogPostsListComponent.directive = 'blogPostsList';
-function BlogPostsListComponent(){
-  this.templateUrl = 'blog/posts/list';
-  this.scope = {
-    posts: '='
-  };
+BlogPostsListController.$inject = ['Posts'];
+function BlogPostsListController(Posts){
+  this.posts = Posts.query();
 }
 
 blogPostsListPage.$inject = ['$routeProvider'];
 function blogPostsListPage($routeProvider){
   $routeProvider.when('/posts/list', {
-    template: '<blog-posts-list posts="posts" />',
-    controller: ['$scope', 'Posts', function($, Posts){
-      $.posts = Posts.query();
-    }]
+    templateUrl: 'blog/posts/list',
+    controller: BlogPostsListController,
+    controllerAs: 'state'
+  });
+  $routeProvider.otherwise({
+    redirectTo: '/posts/list'
   });
 }
 
@@ -21,6 +20,5 @@ angular.module('blog.posts.list', [
   'blog.posts.service',
   'blog.posts.list.template'
 ])
-.component(BlogPostsListComponent)
 .config(blogPostsListPage)
 ;

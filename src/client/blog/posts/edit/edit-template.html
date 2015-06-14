@@ -1,15 +1,25 @@
 <form name="postEdit">
   <div class="form-group">
     <label for="title">Title</label>
-    <input ng-model="state.post.title" type="text" class="form-control" id="title" placeholder="Post Title">
-  </div>
-  <div class="form-group">
-    <label for="snippet">Snippet</label>
-    <input ng-model="state.post.snippet" type="text" class="form-control" id="snippet" placeholder="Post Snippet">
+    <input
+      type="text" name="title" placeholder="Post Title" class="form-control"
+      ng-model="state.post.title" ng-model-options="{updateOn: 'change'}"
+      required ng-minlength="5" ng-maxlength="124"
+    >
+    <div class="bg-danger well-sm"
+      ng-messages="postEdit.title.$error" ng-show="postEdit.title.$invalid"
+    >
+      <p ng-message="required">Please add a title!</p>
+      <p ng-message="minlength">Don't let the title be too short!</p>
+      <p ng-message="maxlength">Don't let the title get too long!</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="content">Post</label>
-    <textarea ng-model="state.post.content" class="form-control" id="content" placeholder="Write your post" rows="8"></textarea>
+    <textarea
+      name="content" placeholder="Write your post!" rows="8" class="form-control"
+      ng-model="state.post.content"
+    ></textarea>
   </div>
   <button type="submit" class="btn btn-default" ng-click="state.save()">Submit</button>
 </form>
