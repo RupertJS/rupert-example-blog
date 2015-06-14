@@ -24,6 +24,7 @@ function blogPostsEditPage($routeProvider){
 angular.module('blog.posts.edit', [
   'ngRoute',
   'ngMessages',
+  'render.directive',
   'blog.posts.service',
   'blog.posts.edit.template'
 ])

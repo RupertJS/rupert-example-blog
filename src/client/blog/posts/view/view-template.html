@@ -3,6 +3,5 @@
   <div>
     <a href="#/posts/edit/{{state.post.id}}">Edit</a>
   </div>
-  <p>{{state.post.snippet}}</p>
-  <p>{{state.post.content}}</p>
+  <render source="state.post.content"></render>
 </div>

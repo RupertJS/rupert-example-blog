@@ -14,12 +14,17 @@
       <p ng-message="maxlength">Don't let the title get too long!</p>
     </div>
   </div>
-  <div class="form-group">
-    <label for="content">Post</label>
-    <textarea
-      name="content" placeholder="Write your post!" rows="8" class="form-control"
-      ng-model="state.post.content"
-    ></textarea>
+  <div class="row">
+    <div class="form-group col-sm-6">
+      <label for="content">Post</label>
+      <textarea
+        name="content" placeholder="Write your post!" rows="8" class="form-control"
+        ng-model="state.post.content"
+      ></textarea>
+    </div>
+    <div class="col-sm-6">
+      <render source="state.post.content"></render>
+    </div>
   </div>
   <button type="submit" class="btn btn-default" ng-click="state.save()">Submit</button>
 </form>

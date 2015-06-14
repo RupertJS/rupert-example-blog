@@ -7,8 +7,8 @@
       ]
     },
     "vendors": {
-      "prefix": [],
-      "js": [],
+      "prefix": ["./src/vendors"],
+      "js": ["marked.js"],
       "css": []
     },
     "angular": {

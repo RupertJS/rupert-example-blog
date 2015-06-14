@@ -16,6 +16,7 @@ function blogPostsViewPage($routeProvider){
 
 angular.module('blog.posts.view', [
   'ngRoute',
+  'render.directive',
   'blog.posts.service',
   'blog.posts.view.template'
 ])
