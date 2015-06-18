@@ -1,5 +1,4 @@
 angular.module('renderer', []).provider('renderer', function() {
-  var Renderer, options, treeLang;
   var options = {
     renderer: marked.Renderer,
     gfm: true,
@@ -10,16 +9,19 @@ angular.module('renderer', []).provider('renderer', function() {
     smartLists: true,
     smartypants: false
   };
+
   this.updateOptions = function(opts) {
-    return options = angular.extend(options, opts);
+    options = angular.extend(options, opts);
   };
-  Renderer = function($q) {
+
+  this.$get = Renderer;
+
+  Renderer.$inject = ['$q'];
+  function Renderer($q) {
     options.renderer = new options.renderer();
     marked.setOptions(options);
     return function(src) {
       return $q.when(marked(src));
     };
-  };
-  Renderer.$inject = ['$q'];
-  this.$get = Renderer;
+  }
 });

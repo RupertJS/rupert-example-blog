@@ -16,6 +16,8 @@
     "require": true,
     "describe": false,
     "it": false,
-    "beforeEach": false
+    "beforeEach": false,
+    "angular": false,
+    "marked": false
   }
 }

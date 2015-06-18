@@ -1,6 +1,6 @@
 BlogPostsViewController.$inject = [
   '$routeParams', 'Posts'
-]
+];
 function BlogPostsViewController($r, Posts){
   this.post = Posts.get({postId: $r.postId});
 }
