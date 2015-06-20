@@ -18,6 +18,10 @@
     "it": false,
     "beforeEach": false,
     "angular": false,
-    "marked": false
+    "marked": false,
+    "inject": false,
+    "renderRoute": false,
+    "renderElement": false,
+    "console": false
   }
 }
