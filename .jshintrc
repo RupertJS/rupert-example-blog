@@ -17,9 +17,11 @@
     "describe": false,
     "it": false,
     "beforeEach": false,
+    "afterEach": false,
     "angular": false,
-    "marked": false,
+    "marked": true,
     "inject": false,
+    "sinon": false,
     "renderRoute": false,
     "renderElement": false,
     "console": false
